@@ -1,0 +1,80 @@
+
+        {% macro Navbar(Loggedin) -%}
+        <header class="p-3 mb-3 border-bottom">
+          
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                  <image class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"></image>
+                </a>
+                
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                  <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
+                  <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
+                  <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
+                  <li><a href="#" class="nav-link px-2 link-dark">Products</a></li>
+
+                </ul>
+
+
+                {% if Loggedin==1 %}
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+        
+                <div class="dropdown text-end">
+                  <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                  </a>
+
+                  <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">Send Email...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/users/signout">Sign out</a></li>
+                  </ul>
+                  {%endif%}
+                </div>
+              </div>
+          </header>
+        {%- endmacro %}
+
+        {% macro ShowEmail(code,sender,msg) -%}
+          <form name={{code}} action="/Home/" method="post" >
+
+            <div class="d" class="OpenBtn" style="border-left: 5px solid #4285f4; background-color: #eff1f9;   height:90px;
+                          width: 90%; padding:5px; margin: 20px;"  >
+
+ 
+                    <h1 style="font-style:Sans Serif ; font-size: medium;">{{sender}}</h1> 
+
+                      <p id="{{code}}" class="hide">{{msg}}</p>
+                      <input type="hidden" id="cust{{code}}" name="custId" value="{{code}}">
+
+            </div>
+
+            </form>
+          
+
+
+        {%- endmacro %}
+        {% macro ShowFooter() -%}
+
+        <footer class="bg-light text-center text-lg-start">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2022 Copyright: Kareem Yahia & Mohammed Jabareen
+            </div>
+            <!-- Copyright -->
+          </footer>
+          {%- endmacro %}
+
+          {% macro OpenEmail(mail) -%}
+
+
+
+              
+    
+            {%- endmacro %}
+  

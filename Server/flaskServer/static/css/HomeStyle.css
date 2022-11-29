@@ -1,0 +1,11 @@
+.HideBtn:hover{
+    size: 20px;
+    background-color: #fff;
+   /* border-radius: 10px;*/
+   margin: 0 auto;
+}
+
+.d:hover{
+
+    transform: scale(1.02) !important; 
+}
